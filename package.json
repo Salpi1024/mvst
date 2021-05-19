@@ -37,6 +37,14 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.3.19",
-    "graphql": "^15.5.0"
+    "add": "^2.0.6",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "graphql": "^15.5.0",
+    "prettier": "^2.3.0",
+    "yarn": "^1.22.10"
   }
 }
