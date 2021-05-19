@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.3.19",
+    "graphql": "^15.5.0"
   }
 }

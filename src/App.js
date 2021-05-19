@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  useQuery,
+  gql
+} from '@apollo/client';
+import {useEffect} from 'react'
+
+const LOGIN = gql `
+query Query($login: String!) {
+    user(login: $login) {
+    bio
+    email
+  } 
+    }
+  
+`
 
 function App() {
+  const { loading, error, data } = useQuery(LOGIN, {variables: {login: "Salpi1024"} });
+  useEffect(() => {
+   if(data) console.log(data);
+  
+  }, [data])
+  if (loading) return <h1>Loading...</h1> ;
+  if (error) return <h1> Error! ${error.message}</h1>;
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>{data.user.email}</h1>  
     </div>
+
+    
   );
 }
 
