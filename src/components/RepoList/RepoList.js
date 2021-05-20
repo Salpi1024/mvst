@@ -24,13 +24,16 @@ function RepoList({ user }) {
   if (user) {
     return (
       <div className="RepoList">
-        <div className="user-container">
+        <div className="user-details-container">
           <img src={user.avatarUrl} className="profilePic" alt="profile picture"></img>
           <div>
-            <h1>{user.name}</h1>
+            <a href={`https://github.com/${user.login}`}>
+              <h1>@{user.login}</h1>{' '}
+            </a>
+            <p className="name">{user.name}</p>
             <ul className="repo-names-list">
               <p>Here you can see {user.name.split(' ')[0]}&apos;s repositories</p>
-              <input placeholder="Browse through them!" onChange={handleChange}></input>
+              <input className="repo-searchbar" placeholder="Browse through them!" onChange={handleChange}></input>
               {repos ? (
                 repos.map((repo) => (
                   <li className="repo-name" key={repo.node.id}>

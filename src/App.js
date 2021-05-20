@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import { LOGIN } from './Queries';
 import RepoList from './components/RepoList/RepoList';
-
+import Dashboard from './components/Dashboard/Dashboard';
 function App() {
   const defaultUser = {
     avatarUrl: '',
@@ -26,6 +26,7 @@ function App() {
   if (error) return <h1> Error! ${error.message}</h1>;
   return (
     <div className="App">
+      <Dashboard />
       <RepoList user={user} />
     </div>
   );

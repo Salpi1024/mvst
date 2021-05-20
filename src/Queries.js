@@ -5,6 +5,7 @@ const LOGIN = gql`
     user(login: $login) {
       name
       bio
+      login
       avatarUrl(size: 1000)
       repositories(first: 10, isFork: true) {
         edges {
