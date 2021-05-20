@@ -19,7 +19,7 @@ function RepoList({ user }) {
   }, [user]);
   const handleChange = (e) => {
     if (e.target.value === '') setRepos(defaultRepos);
-    setRepos((prev) => prev.filter((repo) => repo.node.name.toLowerCase().includes(e.target.value.toLowerCase())));
+    setRepos(() => defaultRepos.filter((repo) => repo.node.name.toLowerCase().includes(e.target.value.toLowerCase())));
   };
   if (user) {
     return (
