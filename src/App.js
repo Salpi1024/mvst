@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { LOGIN } from './Queries';
 import RepoList from './components/RepoList/RepoList';
 import Dashboard from './components/Dashboard/Dashboard';
+import MidSection from './components/MidSection/MidSection';
 function App() {
   const defaultUser = {
     avatarUrl: '',
@@ -28,6 +29,7 @@ function App() {
     <div className="App">
       <Dashboard />
       <RepoList user={user} />
+      <MidSection setUser={setUser} defaultUser={defaultUser} />
     </div>
   );
 }

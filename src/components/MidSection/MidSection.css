@@ -1,0 +1,18 @@
+.middle {
+    height: 30%;
+    background-color: #2f363d;
+    position: relative;
+    top: -6vh;
+}
+
+.bored {
+    color: #f6f8fa;
+    font-size: 30px;
+    padding: 1%;
+    margin-bottom: -2vh;
+}
+
+.type-line {
+    color: #f6f8fa;
+    font-size: 15px;
+}
