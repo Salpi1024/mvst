@@ -18,3 +18,11 @@
     height: 70px;
     align-self: flex-end;
 }
+
+
+@media (max-width: 430px) {
+ .github-icon {
+     display: none;
+ }   
+    
+}

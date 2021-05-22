@@ -37,14 +37,16 @@ function MidSection({ setUser, defaultUser }) {
             ? 'Looks like we cannot find this user, are you sure you did not make any typos?'
             : 'Type here another username to display their profile!'}
         </p>
-        <div>
+        <div className="search-button">
           <input
-            className="repo-searchbar"
+            className="midsection-searchbar"
             value={newUser}
             onChange={handleChange}
             placeholder="Don't make typos please!!"
           ></input>
-          <button onClick={handleSubmit}>Click here!</button>
+          <button className="midsection-btn" onClick={handleSubmit}>
+            Click here!
+          </button>
         </div>
       </section>
     </div>
