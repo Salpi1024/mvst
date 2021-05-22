@@ -124,3 +124,13 @@ ul {
   background-color: #2f363d;
   color:white;
 }
+
+@media (max-width: 480px) {
+  .user-details-container {
+    flex-direction: column;
+  }
+  .picture-name-container {
+    align-self: center;
+    /* margin-left: 25%; */
+  }
+}
