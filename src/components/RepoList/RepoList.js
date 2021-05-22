@@ -35,9 +35,9 @@ function RepoList({ user }) {
               <p>Here you can see {user.name.split(' ')[0]}&apos;s repositories</p>
               <input className="repo-searchbar" placeholder="Browse through them!" onChange={handleChange}></input>
               {repos ? (
-                repos.map((repo) => (
-                  <li className="repo-name" key={repo.node.id}>
-                    {repo.node.name}
+                repos.map((repo, index) => (
+                  <li className="repo-name" key={index}>
+                    <a href={`https://github.com/${user.login}/${repo.node.name}`}>{repo.node.name}</a>
                   </li>
                 ))
               ) : (

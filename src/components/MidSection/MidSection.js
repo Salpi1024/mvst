@@ -5,15 +5,14 @@ import { useLazyQuery } from '@apollo/client';
 import { LOGIN } from '../../Queries';
 
 function MidSection({ setUser, defaultUser }) {
-  const [searchNewUser, { data }] = useLazyQuery(LOGIN, {
+  const [searchNewUser, { data, error }] = useLazyQuery(LOGIN, {
     fetchPolicy: 'network-only',
   });
   const [newUser, setNewUser] = useState('');
   const handleChange = (e) => {
     setNewUser(e.target.value);
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     searchNewUser({ variables: { login: newUser } });
     setNewUser('');
   };
@@ -25,7 +24,11 @@ function MidSection({ setUser, defaultUser }) {
     <div className="Dashboard">
       <section className="middle">
         <h3 className="bored">Bored of this user?</h3>
-        <p className="type-line">Type here another username to display their profile!</p>
+        <p className="type-line">
+          {error
+            ? 'Looks like we cannot find this user, are you sure you did not make any typos?'
+            : 'Type here another username to display their profile!'}
+        </p>
         <div>
           <input
             className="repo-searchbar"
