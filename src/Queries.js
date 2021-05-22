@@ -7,7 +7,7 @@ const LOGIN = gql`
       bio
       login
       avatarUrl(size: 1000)
-      repositories(first: 10, isFork: true) {
+      repositories(first: 100, isFork: true) {
         edges {
           node {
             id

@@ -9,13 +9,16 @@
   border-radius: 25px;
   display: flex;
   justify-content: space-around;
-  padding: 40px 0; 
+  padding: 30px 0; 
 }
-.picture-name-container {
+.picture-name-container, .repo-list-container {
   width:50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.repo-list-container {
+  align-self: center;
 }
 .username {
   margin: 0;
@@ -27,12 +30,11 @@
   align-self: center;
 }
 .name {
-  /* margin-top: -10%; */
   color: #444d56;
 }
 .profilePic {
   justify-self: flex-start;
-  width: 25%;
+  width: 150px;
   height: auto;
   border-radius: 50%;
   align-self: center;
@@ -40,6 +42,7 @@
 }
 a {
   color: black;
+  align-self: center;
 }
 a:link {
   text-decoration: none;
@@ -58,43 +61,62 @@ a:active {
 .repo-name:hover {
   color: white;
 }
-li, .repo-link:hover {
+.repo-link:hover {
   color: white;
 }
 .repos-container {
+  margin-top: 10px;
   height: 150px;
+  width: 250px;
+  align-self:center;
   overflow-y: scroll;
-  margin-bottom: 10%;
+  overflow-x: hidden;
+  margin-bottom: 5%;
 }
 .repos-container::-webkit-scrollbar {
   width: 5px;
+  height: 200px;
 }
 
 .repos-container::-webkit-scrollbar-track {
-   background-color: #8d9297;
+   background: transparent;
    border-radius: 20px; 
+   height: 300px;
 }
 
 .repos-container::-webkit-scrollbar-thumb {
   background-color: #444d56;
   border-radius: 20px;
 }
+.repos-container::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  margin-bottom: 10px; 
+}
+
+.wrapper::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 50px;
+}
 .repo-searchbar {
   border: 1px solid grey;
     border-radius: 9px;
     height: 20px;
-    width: 80%;
+    width: 200px;;
     padding: 2px 23px 2px 30px;
     outline: 0;
     background-color: #f5f5f5;
+    align-self: center;
 }
 ul {
   list-style-type: none;
+  align-self: center; 
 }
 .repo-name {
   border-radius: 9px;
   height: 25px;
-  margin-right: 10%;
+  overflow: hidden;
+  width: 180px;
+  align-self: center;
 }
 .repo-name:hover{
   text-decoration: none;

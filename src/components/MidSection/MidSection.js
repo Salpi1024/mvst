@@ -3,7 +3,7 @@ import './MidSection.css';
 import { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { LOGIN } from '../../Queries';
-import LoadingSpinner from '../Dashboard/LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 function MidSection({ setUser, defaultUser }) {
   const [searchNewUser, { data, error, loading }] = useLazyQuery(LOGIN, {

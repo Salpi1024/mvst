@@ -5,7 +5,7 @@ import { LOGIN } from './Queries';
 import RepoList from './components/RepoList/RepoList';
 import Dashboard from './components/Dashboard/Dashboard';
 import MidSection from './components/MidSection/MidSection';
-import LoadingSpinner from './components/Dashboard/LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 function App() {
   const defaultUser = {
     login: '',

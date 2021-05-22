@@ -33,8 +33,8 @@ function RepoList({ user }) {
             </a>
             {user.bio ? <p className="bio">{user.bio}</p> : null}
           </div>
-          <div>
-            <p>Here you can see {user.name.split(' ')[0]}&apos;s repositories</p>
+          <div className="repo-list-container">
+            <p className="repo-introduction">{user.name.split(' ')[0]}&apos;s repositories</p>
             <input className="repo-searchbar" placeholder="Browse through them!" onChange={handleChange}></input>
             <div className="repos-container">
               <ul className="repo-names-list">
