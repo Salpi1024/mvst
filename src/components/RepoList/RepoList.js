@@ -25,25 +25,32 @@ function RepoList({ user }) {
     return (
       <div className="RepoList">
         <div className="user-details-container">
-          <img src={user.avatarUrl} className="profilePic" alt="profile picture"></img>
-          <div>
-            <a href={`https://github.com/${user.login}`}>
-              <h1>@{user.login}</h1>{' '}
-            </a>
+          <div className="picture-name-container">
+            <img src={user.avatarUrl} className="profilePic" alt="profile picture"></img>
             <p className="name">{user.name}</p>
-            <ul className="repo-names-list">
-              <p>Here you can see {user.name.split(' ')[0]}&apos;s repositories</p>
-              <input className="repo-searchbar" placeholder="Browse through them!" onChange={handleChange}></input>
-              {repos ? (
-                repos.map((repo, index) => (
-                  <li className="repo-name" key={index}>
-                    <a href={`https://github.com/${user.login}/${repo.node.name}`}>{repo.node.name}</a>
-                  </li>
-                ))
-              ) : (
-                <h1>No repos available with this name!</h1>
-              )}
-            </ul>
+            <a href={`https://github.com/${user.login}`}>
+              <h1 className="username">@{user.login}</h1>
+            </a>
+            {user.bio ? <p className="bio">{user.bio}</p> : null}
+          </div>
+          <div>
+            <p>Here you can see {user.name.split(' ')[0]}&apos;s repositories</p>
+            <input className="repo-searchbar" placeholder="Browse through them!" onChange={handleChange}></input>
+            <div className="repos-container">
+              <ul className="repo-names-list">
+                {repos ? (
+                  repos.map((repo, index) => (
+                    <li className="repo-name" key={index}>
+                      <a className="repo-link" href={`https://github.com/${user.login}/${repo.node.name}`}>
+                        {repo.node.name}
+                      </a>
+                    </li>
+                  ))
+                ) : (
+                  <h1>No repos available with this name!</h1>
+                )}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

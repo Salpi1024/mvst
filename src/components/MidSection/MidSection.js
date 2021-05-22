@@ -3,9 +3,10 @@ import './MidSection.css';
 import { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { LOGIN } from '../../Queries';
+import LoadingSpinner from '../Dashboard/LoadingSpinner/LoadingSpinner';
 
 function MidSection({ setUser, defaultUser }) {
-  const [searchNewUser, { data, error }] = useLazyQuery(LOGIN, {
+  const [searchNewUser, { data, error, loading }] = useLazyQuery(LOGIN, {
     fetchPolicy: 'network-only',
   });
   const [newUser, setNewUser] = useState('');
@@ -19,6 +20,9 @@ function MidSection({ setUser, defaultUser }) {
   if (data) {
     setUser(defaultUser);
     setUser(data.user);
+  }
+  if (loading) {
+    return <LoadingSpinner />;
   }
   return (
     <div className="Dashboard">

@@ -5,8 +5,10 @@ import { LOGIN } from './Queries';
 import RepoList from './components/RepoList/RepoList';
 import Dashboard from './components/Dashboard/Dashboard';
 import MidSection from './components/MidSection/MidSection';
+import LoadingSpinner from './components/Dashboard/LoadingSpinner/LoadingSpinner';
 function App() {
   const defaultUser = {
+    login: '',
     avatarUrl: '',
     bio: '',
     name: '',
@@ -23,7 +25,7 @@ function App() {
     }
   }, [data]);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <LoadingSpinner />;
   if (error) return <h1> Error! ${error.message}</h1>;
   return (
     <div className="App">
