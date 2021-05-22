@@ -1,9 +1,4 @@
-.spinner-container {
-    display: flex;
-    margin: 0 0 auto;
-    /* top: 50%;
-    left: 50%; */
-}
+
 .lds-roller {
     display: inline-block;
     position: relative;
@@ -18,10 +13,10 @@
     content: " ";
     display: block;
     position: absolute;
-    width: 7px;
-    height: 7px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #2f363d;
+    background: #f6f8fa;
     margin: -4px 0 0 -4px;
   }
   .lds-roller div:nth-child(1) {

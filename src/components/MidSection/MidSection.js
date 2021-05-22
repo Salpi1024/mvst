@@ -22,7 +22,11 @@ function MidSection({ setUser, defaultUser }) {
     setUser(data.user);
   }
   if (loading) {
-    return <LoadingSpinner />;
+    return (
+      <div className="mid-spinner">
+        <LoadingSpinner />
+      </div>
+    );
   }
   return (
     <div className="Dashboard">

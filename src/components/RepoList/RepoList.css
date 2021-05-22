@@ -3,29 +3,28 @@
   height: 50%;
   max-height: 50%;
   width: 70%;
-  margin-left: 15%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #f6f8fa;
   border-radius: 25px;
   display: flex;
   justify-content: space-around;
+  padding: 40px 0; 
 }
 .picture-name-container {
   width:50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: -80px;
+  justify-content: center;
 }
 .username {
-  /* padding-top: 30%; */
-  position: relative;
-  top: -50%;
-  /* margin-top: 10%; */
+  margin: 0;
+  line-height: 0;
 }
 .bio {
-  position: relative;
-  top: -20%;
-  margin-bottom: -10%;
+  max-width: 70%;
+  text-justify: auto;
+  align-self: center;
 }
 .name {
   /* margin-top: -10%; */
@@ -33,14 +32,10 @@
 }
 .profilePic {
   justify-self: flex-start;
-  min-height: 20%;
-  min-width: 20%;
-  max-width: 40%;
-  max-height: 40%;
+  width: 25%;
+  height: auto;
   border-radius: 50%;
-  margin-top:5%;
   align-self: center;
-  /* margin-top: 5%; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 a {

@@ -38,7 +38,7 @@ function RepoList({ user }) {
             <input className="repo-searchbar" placeholder="Browse through them!" onChange={handleChange}></input>
             <div className="repos-container">
               <ul className="repo-names-list">
-                {repos ? (
+                {repos.length ? (
                   repos.map((repo, index) => (
                     <li className="repo-name" key={index}>
                       <a className="repo-link" href={`https://github.com/${user.login}/${repo.node.name}`}>

@@ -33,3 +33,6 @@
     transform: rotate(360deg);
   }
 }
+.spinner-container {
+  margin: 50% 50%;
+}

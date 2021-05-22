@@ -25,7 +25,13 @@ function App() {
     }
   }, [data]);
 
-  if (loading) return <LoadingSpinner />;
+  if (loading) {
+    return (
+      <div className="spinner-container">
+        <LoadingSpinner />
+      </div>
+    );
+  }
   if (error) return <h1> Error! ${error.message}</h1>;
   return (
     <div className="App">
