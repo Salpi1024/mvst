@@ -10,16 +10,20 @@ const LOGIN = gql`
       repositories(first: 100, isFork: true) {
         edges {
           node {
-            id
             name
+            owner {
+              login
+            }
           }
         }
       }
       repositoriesContributedTo(first: 10) {
         edges {
           node {
-            id
             name
+            owner {
+              login
+            }
           }
         }
       }

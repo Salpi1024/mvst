@@ -41,7 +41,7 @@ function RepoList({ user }) {
                 {repos.length ? (
                   repos.map((repo, index) => (
                     <li className="repo-name" key={index}>
-                      <a className="repo-link" href={`https://github.com/${user.login}/${repo.node.name}`}>
+                      <a className="repo-link" href={`https://github.com/${repo.node.owner.login}/${repo.node.name}`}>
                         {repo.node.name}
                       </a>
                     </li>
