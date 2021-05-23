@@ -32,13 +32,24 @@ const mockUser = {
   },
   // __typename: 'User',
 };
+const mockErrorQuery = [
+  {
+    request: {
+      query: LOGIN,
+      variables: {
+        login: 'Salpi1024',
+      },
+    },
+    error: new Error('An error occurred'),
+  },
+];
 
 const mockQuery = [
   {
     request: {
       query: LOGIN,
       variables: {
-        login: "Salpi1024",
+        login: 'Salpi1024',
       },
     },
     result: {
@@ -56,4 +67,4 @@ const mockQuery = [
     },
   },
 ];
-export { mockUser, mockQuery };
+export { mockUser, mockQuery, mockErrorQuery };

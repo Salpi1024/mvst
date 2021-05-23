@@ -27,12 +27,12 @@ function App() {
 
   if (loading) {
     return (
-      <div className="spinner-container">
+      <div className="spinner-container" aria-label="loading-spinner">
         <LoadingSpinner />
       </div>
     );
   }
-  if (error) return <h1> Error! ${error.message}</h1>;
+  if (error) return <h1> Error! {error.message}</h1>;
   return (
     <div className="App">
       <Dashboard />
