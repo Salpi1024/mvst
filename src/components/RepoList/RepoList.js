@@ -28,14 +28,21 @@ function RepoList({ user }) {
           <div className="picture-name-container">
             <img src={user.avatarUrl} className="profilePic" alt="profile picture"></img>
             <p className="name">{user.name}</p>
-            <a href={`https://github.com/${user.login}`}>
-              <h1 className="username">@{user.login}</h1>
+            <a href={`https://github.com/${user.login}`} aria-label="username-link">
+              <h1 className="username" aria-label="username">
+                @{user.login}
+              </h1>
             </a>
             {user.bio ? <p className="bio">{user.bio}</p> : null}
           </div>
           <div className="repo-list-container">
             <p className="repo-introduction">{user.name.split(' ')[0]}&apos;s repositories</p>
-            <input className="repo-searchbar" placeholder="Browse through them!" onChange={handleChange}></input>
+            <input
+              className="repo-searchbar"
+              aria-label="repo-searchbar"
+              placeholder="Browse through them!"
+              onChange={handleChange}
+            ></input>
             <div className="repos-container">
               <ul className="repo-names-list">
                 {repos.length ? (
@@ -56,7 +63,6 @@ function RepoList({ user }) {
       </div>
     );
   }
-  return <h1>Loading</h1>;
 }
 
 export default RepoList;
