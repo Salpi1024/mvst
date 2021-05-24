@@ -1,10 +1,20 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import './RepoList.css';
-
+/**
+ * @fileoverview this component renders the profile details,
+ * their repo list, and filters the search of the user.
+ */
 function RepoList({ user }) {
   const [repos, setRepos] = useState([]);
   const [defaultRepos, setDefaultRepos] = useState([]);
+  /**
+   * After receiving the @param {props} user from the parent it sets their repos to two arrays.
+   * This was done in order to concatenate the two arrays of repos(the ones owned by
+   * the profile and the ones in which he/she is a contributor) and having two lists makes the filtering easier.
+   * PS: in my profile I have noticed that a repo called Hogwarts was present both in the owned ones
+   * and in those in which I was a contributor, I decided to filter one out.
+   */
   useEffect(() => {
     if (user) {
       setRepos([
@@ -17,6 +27,7 @@ function RepoList({ user }) {
       ]);
     }
   }, [user]);
+  //This is the function that filters through the repos according to user input.
   const handleChange = (e) => {
     if (e.target.value === '') setRepos(defaultRepos);
     setRepos(() => defaultRepos.filter((repo) => repo.node.name.toLowerCase().includes(e.target.value.toLowerCase())));
