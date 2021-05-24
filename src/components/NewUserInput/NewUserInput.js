@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './MidSection.css';
+import './NewUserInput.css';
 import { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { LOGIN } from '../../Queries';
@@ -11,7 +11,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
  * it is just that after a couple of hours developing @file RepoList
  * I got bored of looking at my face, sorry.
  */
-function MidSection({ setUser, defaultUser }) {
+function NewUserInput({ setUser, defaultUser }) {
   /**
    * In this case to fetch new data a @function LazyQuery is used
    * so that it triggers only when the user clicks
@@ -43,28 +43,26 @@ function MidSection({ setUser, defaultUser }) {
     );
   }
   return (
-    <div className="Dashboard">
-      <section className="middle">
-        <h3 className="bored">Bored of this user?</h3>
-        <p className="type-line">
-          {error
-            ? 'Looks like we cannot find this user, are you sure you did not make any typos?'
-            : 'Type here another username to display their profile!'}
-        </p>
-        <div className="search-button">
-          <input
-            className="midsection-searchbar"
-            value={newUser}
-            onChange={handleChange}
-            placeholder="Don't make typos please!!"
-          ></input>
-          <button className="midsection-btn" onClick={handleSubmit}>
-            Click here!
-          </button>
-        </div>
-      </section>
+    <div className="container--new-user-input">
+      <h3 className="h3--bored-question">Bored of this user?</h3>
+      <p className="p--invitation">
+        {error
+          ? 'Looks like we cannot find this user, are you sure you did not make any typos?'
+          : 'Type here another username to display their profile!'}
+      </p>
+      <div className="container--input-btn">
+        <input
+          className="input--new-user"
+          value={newUser}
+          onChange={handleChange}
+          placeholder="Don't make typos please!!"
+        ></input>
+        <button className="btn--new-user" onClick={handleSubmit}>
+          Click here!
+        </button>
+      </div>
     </div>
   );
 }
 
-export default MidSection;
+export default NewUserInput;

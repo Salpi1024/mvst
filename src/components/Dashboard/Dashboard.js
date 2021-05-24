@@ -1,14 +1,12 @@
 import './Dashboard.css';
-import icon from './icon.png';
+import icon from '../../icon.png';
 
 function Dashboard() {
   return (
-    <div className="Dashboard">
-      <nav className="top">
-        <img className="github-icon" src={icon}></img>
-        <h1 className="title">REPOS FOR MVST</h1>
-      </nav>
-    </div>
+    <nav className="container--dashboard">
+      <img className="img--github-icon" src={icon}></img>
+      <h1 className="h1--title">REPOS FOR MVST</h1>
+    </nav>
   );
 }
 

@@ -1,4 +1,4 @@
-.top {
+.container--dashboard {
     height: 100px;
     width: 100%;
     background-color: #2f363d;
@@ -7,13 +7,13 @@
     margin-bottom: 20px;
 }
 
-.title {
+.h1--title {
     color: #f6f8fa;
     font-size: 40px;
     padding: 1%;
     padding-top: 0;
 }
-.github-icon {
+.img--github-icon {
     width:70px;
     height: 70px;
     align-self: flex-end;

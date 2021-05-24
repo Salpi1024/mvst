@@ -1,5 +1,5 @@
 
-.user-details-container {
+.container--user-details {
   height: 50%;
   max-height: 50%;
   width: 70%;
@@ -11,25 +11,25 @@
   justify-content: space-around;
   padding: 30px 0; 
 }
-.picture-name-container, .repo-list-container {
+.container--pic-name, .container--repo-list {
   width:50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.repo-list-container {
+.container--repo-list {
   align-self: center;
 }
-.username {
+.h1--username {
   margin: 0;
   line-height: 0;
 }
-.bio {
+.p--bio {
   max-width: 70%;
   text-justify: auto;
   align-self: center;
 }
-.name {
+.p--name {
   color: #444d56;
 }
 .profilePic {
@@ -40,31 +40,33 @@
   align-self: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-a {
+.a {
   color: black;
   align-self: center;
 }
-a:link {
+.a:link {
   text-decoration: none;
 }
 
-a:visited {
+.a:visited {
   text-decoration: none;
 }
 
 
 
-a:active {
+.a:active {
   text-decoration: none;
   color: #444d56;
 }
 .repo-name:hover {
   color: white;
+  background-color: #2f363d;
 }
-.repo-link:hover {
-  color: white;
+.a--repo-link:hover {
+  /* color: white; */
+  text-decoration: underline;
 }
-.repos-container {
+.container--repos {
   margin-top: 10px;
   height: 150px;
   width: 250px;
@@ -73,31 +75,22 @@ a:active {
   overflow-x: hidden;
   margin-bottom: 5%;
 }
-.repos-container::-webkit-scrollbar {
+.container--repos::-webkit-scrollbar {
   width: 5px;
   height: 200px;
 }
 
-.repos-container::-webkit-scrollbar-track {
-   background: transparent;
-   border-radius: 20px; 
-   height: 300px;
-}
 
-.repos-container::-webkit-scrollbar-thumb {
+.container--repos::-webkit-scrollbar-thumb {
   background-color: #444d56;
   border-radius: 20px;
 }
-.repos-container::-webkit-scrollbar-track-piece:end {
+.container--repos::-webkit-scrollbar-track-piece:end {
   background: transparent;
   margin-bottom: 10px; 
 }
 
-.wrapper::-webkit-scrollbar-track-piece:start {
-  background: transparent;
-  margin-top: 50px;
-}
-.repo-searchbar {
+.searchbar--repo {
   border: 1px solid grey;
   border-radius: 9px;
   height: 20px;
@@ -107,12 +100,11 @@ a:active {
   background-color: #f5f5f5;
   align-self: center;
 }
-ul {
+.list--repo-names {
   list-style-type: none;
   align-self: center; 
 }
-.repo-name {
-  border-radius: 9px;
+.li--repo-name {
   height: 25px;
   overflow: hidden;
   width: 180px;
@@ -124,12 +116,16 @@ ul {
   background-color: #2f363d;
   color:white;
 }
+.p--repos-not-found {
+  width:180px;
+  align-self: center;
+}
 
 @media (max-width: 600px) {
-  .user-details-container {
+  .container--user-details {
     flex-direction: column;
   }
-  .picture-name-container {
+  .container--pic-name {
     align-self: center;
   }
 }

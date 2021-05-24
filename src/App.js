@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { LOGIN } from './Queries';
 import RepoList from './components/RepoList/RepoList';
 import Dashboard from './components/Dashboard/Dashboard';
-import MidSection from './components/MidSection/MidSection';
+import NewUserInput from './components/NewUserInput/NewUserInput';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 function App() {
   /**
@@ -40,18 +40,29 @@ function App() {
   //While fetching the first profile a loading animation gets shown to the user.
   if (loading) {
     return (
-      <div className="spinner-container" aria-label="loading-spinner">
-        <LoadingSpinner />
+      <div className="App">
+        <Dashboard />
+        <div className="container--spinner" aria-label="loading-spinner">
+          <LoadingSpinner />
+        </div>
       </div>
     );
   }
   //This if statement handles the rendering in case of an error while fetching data.
-  if (error) return <h1> Error! {error.message}</h1>;
+  if (error)
+    return (
+      <div className="App">
+        <Dashboard />
+        <h1>Look like we have encountered an error</h1>
+        <p> Error! {error.message}</p>;
+      </div>
+    );
+
   return (
     <div className="App">
       <Dashboard />
       <RepoList user={user} />
-      <MidSection setUser={setUser} defaultUser={defaultUser} />
+      <NewUserInput setUser={setUser} defaultUser={defaultUser} />
     </div>
   );
 }
