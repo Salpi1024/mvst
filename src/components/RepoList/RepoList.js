@@ -5,6 +5,14 @@ import './RepoList.css';
  * @fileoverview this component renders the profile details,
  * their repo list, and filters the search of the user.
  */
+
+//This function will be used in the useEffect to make sure that there aren't any repo doubles
+function validateUnique(arrOfRepos, name) {
+  for (let i = 0; i < arrOfRepos.length; i++) {
+    if (arrOfRepos[i].node.name === name) return false;
+  }
+  return true;
+}
 function RepoList({ user }) {
   const [repos, setRepos] = useState([]);
   const [defaultRepos, setDefaultRepos] = useState([]);
@@ -19,11 +27,15 @@ function RepoList({ user }) {
     if (user) {
       setRepos([
         ...user.repositories.edges,
-        ...user.repositoriesContributedTo.edges.filter((repo) => repo.node.name !== 'Hogwarts'),
+        ...user.repositoriesContributedTo.edges.filter((repo) =>
+          validateUnique(user.repositories.edges, repo.node.name)
+        ),
       ]);
       setDefaultRepos([
         ...user.repositories.edges,
-        ...user.repositoriesContributedTo.edges.filter((repo) => repo.node.name !== 'Hogwarts'),
+        ...user.repositoriesContributedTo.edges.filter((repo) =>
+          validateUnique(user.repositories.edges, repo.node.name)
+        ),
       ]);
     }
   }, [user]);
