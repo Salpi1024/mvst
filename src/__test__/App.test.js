@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from '../App';
 import { MockedProvider } from '@apollo/client/testing';
-import { mockQuery, mockErrorQuery } from './mocks';
+import { mockQuery, mockErrorQuery, mockUser } from './mocks';
 
 it('renders the LOGIN query', async () => {
   render(
@@ -9,8 +9,8 @@ it('renders the LOGIN query', async () => {
       <App />
     </MockedProvider>
   );
-  const mockUsername = await screen.findByText('Awesomeness');
-  const firstMockRepoName = await screen.findByText('another-amazing-app');
+  const mockUsername = await screen.findByText('@' + mockUser.login);
+  const firstMockRepoName = await screen.findByText(mockUser.repositories.edges[0].node.name);
   expect(mockUsername).toBeInTheDocument();
   expect(firstMockRepoName).toBeInTheDocument();
 });
