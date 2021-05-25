@@ -6,20 +6,20 @@ import RepoList from './components/RepoList/RepoList';
 import NavBar from './components/NavBar/NavBar';
 import NewUserInput from './components/NewUserInput/NewUserInput';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
+const defaultUser = {
+  login: '',
+  avatarUrl: '',
+  bio: '',
+  name: '',
+  repositories: { edges: [] },
+  repositoriesContributedTo: { edges: [] },
+};
 function App() {
   /**
    * @param {Object} defaultUser is the default state for the user.
    * It represents the shape of the object received by the GraphQL query
    * and it helps when switching to other profiles(extra-feature)
    */
-  const defaultUser = {
-    login: '',
-    avatarUrl: '',
-    bio: '',
-    name: '',
-    repositories: { edges: [] },
-    repositoriesContributedTo: { edges: [] },
-  };
 
   const [user, setUser] = useState(defaultUser);
   /**

@@ -30,7 +30,6 @@ const mockUser = {
       },
     ],
   },
-  // __typename: 'User',
 };
 const mockErrorQuery = [
   {
@@ -60,8 +59,8 @@ const mockQuery = [
           bio: '',
           name: mockUser.name,
           login: mockUser.login,
-          repositoriesContributedTo: { ...mockUser.repositoriesContributedTo },
           repositories: { ...mockUser.repositories },
+          repositoriesContributedTo: { ...mockUser.repositoriesContributedTo },
         },
       },
     },
