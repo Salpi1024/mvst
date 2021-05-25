@@ -1,4 +1,4 @@
-import { LOGIN } from './Queries';
+import { LOGIN } from '../GraphQL/Queries';
 const mockUser = {
   login: 'AwesomeDev',
   avatarUrl: 'someavatar.jpg',

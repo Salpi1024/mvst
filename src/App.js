@@ -1,7 +1,7 @@
 import './App.css';
 import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
-import { LOGIN } from './Queries';
+import { LOGIN } from './GraphQL/Queries';
 import RepoList from './components/RepoList/RepoList';
 import NavBar from './components/NavBar/NavBar';
 import NewUserInput from './components/NewUserInput/NewUserInput';

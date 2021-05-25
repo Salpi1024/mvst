@@ -2,7 +2,7 @@
 import './NewUserInput.css';
 import { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
-import { LOGIN } from '../../Queries';
+import { LOGIN } from '../../GraphQL/Queries';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 /**
  * @fileoverview this is a component I decided to

@@ -1,16 +1,11 @@
-import RepoList from './RepoList';
+import RepoList from '../components/RepoList/RepoList';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { mockUser } from '../../mocks';
+import { mockUser } from './mocks';
 import userEvent from '@testing-library/user-event';
 
 describe('Testing general features of the RepoList component', () => {
-  let component;
   beforeEach(() => {
-    component = render(<RepoList user={mockUser} />);
-  });
-
-  afterEach(() => {
-    component.unmount();
+    render(<RepoList user={mockUser} />);
   });
 
   it('should render RepoList', () => {
