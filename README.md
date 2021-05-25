@@ -6,13 +6,13 @@ Tech Challenge for MVST
 3. Navigate to the 'client' folder in your terminal and install the dependencies:  
 `cd client && npm install`
 4. Create a .env file in the 'client' folder following this example:
-<code>
+<pre>
 REACT_APP_GH_URI="https://api.github.com/graphql"
 REACT_APP_MY_ENV="<Your personal access token>"
-</code>
+</pre>
 5. Start the app:  
 `npm start` 
 
-You can tests with:
+You can run tests with:
 `npm test`
 
