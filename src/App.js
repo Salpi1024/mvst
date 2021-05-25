@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { useState, useEffect } from 'react';
 import { LOGIN } from './Queries';
 import RepoList from './components/RepoList/RepoList';
-import Dashboard from './components/Dashboard/Dashboard';
+import NavBar from './components/NavBar/NavBar';
 import NewUserInput from './components/NewUserInput/NewUserInput';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 function App() {
@@ -41,7 +41,7 @@ function App() {
   if (loading) {
     return (
       <div className="App">
-        <Dashboard />
+        <NavBar />
         <div className="container--spinner" aria-label="loading-spinner">
           <LoadingSpinner />
         </div>
@@ -52,7 +52,7 @@ function App() {
   if (error)
     return (
       <div className="App">
-        <Dashboard />
+        <NavBar />
         <h1>Look like we have encountered an error</h1>
         <p> Error! {error.message}</p>;
       </div>
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <Dashboard />
+      <NavBar />
       <RepoList user={user} />
       <NewUserInput setUser={setUser} defaultUser={defaultUser} />
     </div>

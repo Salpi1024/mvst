@@ -4,7 +4,7 @@ import { MockedProvider } from '@apollo/client/testing';
 import { mockQuery, mockErrorQuery } from './mocks';
 
 it('renders the LOGIN query', async () => {
-  const component = render(
+  render(
     <MockedProvider mocks={mockQuery} addTypename={false}>
       <App />
     </MockedProvider>
@@ -13,27 +13,24 @@ it('renders the LOGIN query', async () => {
   const firstMockRepoName = await screen.findByText('another-amazing-app');
   expect(mockUsername).toBeInTheDocument();
   expect(firstMockRepoName).toBeInTheDocument();
-  component.unmount();
 });
 
 it('The LOGIN query errors correctly', async () => {
-  const component = render(
+  render(
     <MockedProvider mocks={mockErrorQuery} addTypename={false}>
       <App />
     </MockedProvider>
   );
   const error = await screen.findByText('Error! An error occurred');
   expect(error).toBeInTheDocument();
-  component.unmount();
 });
 
 it('The LOGIN query loads correctly', () => {
-  const component = render(
+  render(
     <MockedProvider addTypename={false}>
       <App />
     </MockedProvider>
   );
   const loading = screen.getByLabelText('loading-spinner');
   expect(loading).toBeInTheDocument();
-  component.unmount();
 });
