@@ -1,42 +1,42 @@
 .container--new-user-input {
-    height: 30%;
-    background-color: #2f363d;
-    position: relative;
-    top: 0vh;
-    display: flex;
-    flex-direction: column;
+  height: 30%;
+  background-color: #2f363d;
+  position: relative;
+  top: 0vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .h3--bored-question {
-    color: #f6f8fa;
-    font-size: 30px;
-    padding: 1%;
-    margin-bottom: -2vh;
+  color: #f6f8fa;
+  font-size: 30px;
+  padding: 1%;
+  margin-bottom: -2vh;
 }
 
 .p--invitation {
-    color: #f6f8fa;
-    font-size: 15px;
+  color: #f6f8fa;
+  font-size: 15px;
 }
 
 .mid-spinner {
-    margin: 5% auto;
+  margin: 5% auto;
 }
 
 .container--input-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input--new-user {
-    border: 1px solid grey;
-      border-radius: 9px;
-      height: 30px;
-      width: 250px;;
-      padding: 2px 23px 2px 30px;
-      outline: 0;
-      background-color: #f5f5f5;
+  border: 1px solid grey;
+  border-radius: 9px;
+  height: 30px;
+  width: 250px;;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #f5f5f5;
   }
 .btn--new-user {
   margin-top: 7px;
